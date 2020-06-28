@@ -12,18 +12,21 @@ Dir.glob("#{dir}/**/*.{mp3,m4a}") do |path|
   TagLib::FileRef.open(path) do |fileref|  
     next if fileref.null?
     tag = fileref.tag
+    changed = false
     if tag.title && tag.track > 0
       prefix = format("%02d ", tag.track)
       if !tag.title.start_with?(prefix)
         tag.title = prefix + tag.title
+        changed = true
       end
     end
     if tag.album && tag.year > 0
       prefix = format("%04d ", tag.year)
       if !tag.album.start_with?(prefix)
         tag.album = prefix + tag.album
+        changed = true
       end
     end
-    fileref.save
+    fileref.save if changed
   end
 end
