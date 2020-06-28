@@ -1,5 +1,3 @@
-require_relative "lib/number_tunes/version"
-
 Gem::Specification.new do |spec|
   spec.name          = "number_tunes"
   spec.version       = "0.0.1"
