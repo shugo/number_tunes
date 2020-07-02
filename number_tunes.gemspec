@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "number_tunes"
-  spec.version       = "0.0.2"
+  spec.version       = "0.0.3"
   spec.authors       = ["Shugo Maeda"]
   spec.email         = ["shugo@ruby-lang.org"]
 
